@@ -6,13 +6,8 @@
       "id": "4"
     },
     {
-      "title": "buy some milk",
-      "isFav": true,
-      "id": "5"
-    },
-    {
       "title": "go to the gym",
-      "isFav": true,
+      "isFav": false,
       "id": "6"
     },
     {
@@ -23,11 +18,6 @@
     {
       "id": "1914",
       "title": "love someone",
-      "isFav": true
-    },
-    {
-      "id": "6555",
-      "title": "care for someone",
       "isFav": true
     },
     {

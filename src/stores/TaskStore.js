@@ -7,19 +7,19 @@ export const useTaskStore = defineStore('taskStore', {
   }),
 
   getters: {
-    getFavTasks() {
+    favTasks() {
       return this.tasks.filter(task => task.isFav);
     },
 
-    getFavCount () {
-      // return this.getFavTasks.length;
+    favCount () {
+      // return this.favTasks.length;
 
       // return this.tasks.filter(task => task.isFav).length;
 
       return this.tasks.reduce((acc, task) => task.isFav ? acc + 1 : acc, 0);
     },
 
-    getTotalCount: (state) => state.tasks.length,
+    totalCount: (state) => state.tasks.length,
   },
 
   actions: {
