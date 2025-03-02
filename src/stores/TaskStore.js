@@ -24,26 +24,68 @@ export const useTaskStore = defineStore('taskStore', {
 
   actions: {
     async getTasks() {
-      this.loading = true;
+      try {
+        this.loading = true;
+        const response = await fetch("http://localhost:5000/tasks");
+        const data = await response.json();
 
-      const response = await fetch("http://localhost:5000/tasks");
-      const data = await response.json();
-      this.tasks = data;
-
-      this.loading = false;
+        if (data) {
+          this.tasks = data;
+        }
+      } catch (error) {
+        console.log('error', error)
+      } finally {
+        this.loading = false;
+      }
     },
     
-    addTask(task) {
-      this.tasks.push(task);
+    async addTask(task) {
+      try {
+        const response = await fetch("http://localhost:5000/tasks", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(task),
+        });
+
+        if (response.ok) {
+          this.tasks.push(task);
+        } else {
+          console.error("Error adding task");
+        }
+      } catch (error) {
+        console.error('error', error)
+      }
     },
 
-    deleteTask(id) {
-      this.tasks = this.tasks.filter(task => task.id !== id);
+    async deleteTask(id) {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+
+      try {
+        await fetch(`http://localhost:5000/tasks/${id}`, {
+          method: "DELETE",
+        });
+      } catch (error) {
+        console.error('error', error)
+      }
     },
 
     toggleFavTask(id) {
       const task = this.tasks.find(task => task.id === id);
       task.isFav = !task.isFav;
+
+      try {
+        fetch(`http://localhost:5000/tasks/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ isFav: task.isFav }),
+        });
+      } catch (error) {
+        console.error('error', error)
+      }
     }
   }
 })

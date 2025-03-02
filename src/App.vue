@@ -36,6 +36,8 @@
           <TaskDetails :task="task" />
         </div>
       </div>
+
+      <button @click="resetState">Reset State</button>
   </main>
 </template>
 
@@ -50,4 +52,8 @@ const taskStore = useTaskStore();
 taskStore.getTasks();
 
 const filter = ref('all');
+
+const resetState = () => {
+  taskStore.$reset();
+}
 </script>
