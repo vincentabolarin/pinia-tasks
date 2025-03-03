@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <button @click="resetState">Reset State</button>
+      <!-- <button @click="resetState">Reset State</button> -->
   </main>
 </template>
 
