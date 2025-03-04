@@ -19,7 +19,7 @@
 
       <!-- Loading -->
       <div v-if="loading" class="loading">
-        <p>Loading Tasks...</p>
+        <p>Loading...</p>
       </div>
 
      <!-- Task List -->
