@@ -24,14 +24,14 @@
 
      <!-- Task List -->
       <div class="task-list" v-if="filter === 'all'">
-        <p>You have {{ totalCount }} task{{totalCount > 1 ? 's' : ''}} left to do!</p>
+        <p>You have {{ totalCount }} task{{totalCount > 1 ? 's' : ''}} left to do</p>
         <div v-for="task in tasks">
           <TaskDetails :task="task" />
         </div>
       </div>
 
       <div class="task-list" v-if="filter === 'favs'">
-        <p>You have {{ favCount }} fav task{{favCount > 1 ? 's' : ''}} left to do!</p>
+        <p>You have {{ favCount }} fav task{{favCount > 1 ? 's' : ''}} left to do</p>
         <div v-for="task in favTasks">
           <TaskDetails :task="task" />
         </div>
