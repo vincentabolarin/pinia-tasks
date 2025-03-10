@@ -21,14 +21,9 @@
       "id": "4"
     },
     {
-      "title": "prepare lunch",
+      "title": "prepare dinner",
       "isFav": false,
       "id": "5"
-    },
-    {
-      "title": "prepare dinner",
-      "isFav": true,
-      "id": "6"
     }
   ]
 }
