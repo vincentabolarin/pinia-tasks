@@ -17,7 +17,7 @@ const addTask = () => {
   if (newTask.value.trim() === '') return;
 
   taskStore.addTask({
-    id: String(Math.floor(Math.random() * 10000)),
+    id: String(Math.floor(Math.random() * 100000)),
     title: newTask.value,
     isFav: false
   });
