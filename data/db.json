@@ -19,11 +19,6 @@
       "title": "prepare lunch",
       "isFav": true,
       "id": "4"
-    },
-    {
-      "title": "prepare dinner",
-      "isFav": false,
-      "id": "5"
     }
   ]
 }
